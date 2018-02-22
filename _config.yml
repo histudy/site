@@ -72,5 +72,5 @@ theme: histudy
 deploy:
   type: git
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
-  repo: git@github.com:histudy/histudy.github.io.git
+  repo: git@github.com:histudy/site.git
   branch: master
