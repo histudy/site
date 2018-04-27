@@ -65,11 +65,3 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: histudy
-
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
-  repo: git@github.com:histudy/site.git
-  branch: master
