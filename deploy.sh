@@ -20,8 +20,14 @@ if [ ! -e public/.git ]; then
   git worktree add public master
 fi
 
-hexo generate
-cd public
 COMMIT_MESSAGE=$(date "+Site updated: %Y-%m-%d %H:%M:%S")
 git add -A
-git commit -am "$COMMIT_MESSAGE"
+git commit -m "$COMMIT_MESSAGE"
+git push
+
+hexo generate
+
+cd public
+git add -A
+git commit -m "$COMMIT_MESSAGE"
+git push
