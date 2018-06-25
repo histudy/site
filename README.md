@@ -1,86 +1,101 @@
-Himeji IT Study Meeting
-=======================
+# Himeji IT Study Meeting
 
 [![Build Status](https://travis-ci.org/histudy/histudy.github.io.svg?branch=develop)](https://travis-ci.org/histudy/histudy.github.io)
 
-テスト方法
---------------------------------------------
+## テスト方法
 
-サイトの生成にHexoを利用しているので利用するためのパッケージをインストールします。
+1. サイトの生成にHexoを利用しているので利用するためのパッケージをインストールします。
 
-    $ sudo apt install git nodejs nodejs-legacy npm
+```shell
+sudo apt install git nodejs nodejs-legacy npm
+```
 
-Hexoをインストールします。
+2. Hexoをインストールします。
 
-    $ sudo npm install -g hexo-cli
+```shell
+sudo npm install -g hexo-cli
+```
 
-このリポジトリをクローンします。
+3. このリポジトリをクローンします。
 
-    $ git clone https://github.com/histudy/histudy.github.io
+```shell
+git clone https://github.com/histudy/site
+```
 
-クローンしたリポジトリに必要なパッケージをインストールします。
+4. クローンしたリポジトリに必要なパッケージをインストールします。
 
-    $ cd website/
-    $ npm install
+``` shell
+cd site/
+npm install
+```
 
-ビルドしてHexoのサーバーを起動します。
+5. ビルドしてHexoのサーバーを起動します。
 
-    $ hexo g
-    $ hexo s
+```shell
+hexo g
+hexo s
+```
 
-ブラウザで http://localhost:4000/ にアクセスすると内容の確認ができます。
+6. ブラウザで http://localhost:4000/ にアクセスすると内容の確認ができます。
 
-各種コマンド
---------------------------------------------
+## 各種コマンド
 
 ### Hexoサーバーを起動する
 
-```
+```shell
 npm run start
 ```
-ブラウザでhttp://localhost:4000/ にアクセスすると内容の確認ができます。
+
+ブラウザで http://localhost:4000/ にアクセスすると内容の確認ができます。
 
 ### サイトを生成する
 
-```
+```shell
 npm run generate
 ```
 
+サイトが生成されます。
 
 ### デプロイ(Github Pageに反映する)
 
-```
+```shell
 npm run deploy
 ```
 
-こんなときは
---------------------------------------------
+## こんなときは
 
 ### hexoを実行しようとすると、「no method 'find'」というエラーが発生する
 
 nodejsのバージョンが古いため、findメソッドが未実装のバージョンがインストールされている可能性があります。
 
-```
+```shell
 nodejs -v
 ```
 
-apt-getからは、古いバージョンのnodejsがインストールされてしまう可能性があるため、v4またはv6をインストールしてください。
+apt-getからは、古いバージョンのnodejsがインストールされてしまう可能性があるため、
+v4以上をインストールしてください。
 
 * v4をインストールする場合
 
-```
+```shell
 sudo curl -sL https://deb.nodesource.com/setup_4.x | sudo bash -
 ```
 
 * v6をインストールする場合
 
-```
+```shell
 sudo curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -
 ```
 
+* v10をインストールする場合
 
-検討課題
---------------------------------------------
+```shell
+sudo curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+```
+
+## 検討課題
 
 - テンプレートのカスタマイズとか
-    - 現在は[hueman](https://github.com/ppoffice/hexo-theme-hueman)を少し変更して使用中
+    - 現在は[hueman]を少し変更して使用中
+
+[hueman]:https://github.com/ppoffice/hexo-theme-hueman
