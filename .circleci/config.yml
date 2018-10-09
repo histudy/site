@@ -1,5 +1,5 @@
 version: 2.1
-executor:
+executors:
   default:
     docker:
       - image: circleci/node:8-browsers
