@@ -56,4 +56,5 @@ workflows:
           requires:
             - build
           filters:
-            branches: develop
+            branches:
+              - develop
