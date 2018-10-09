@@ -1,9 +1,25 @@
 version: 2.1
+# -------------
+# 実行環境
+# -------------
 executors:
   default:
     docker:
       - image: circleci/node:8-browsers
     working_directory: ~/repo
+    # environment:
+    #   # 以下の環境変数を管理画面から設定すること
+    #   # ※デプロイ先の接続情報は適時読み替えてください
+    #   USER_NAME: circleci
+    #   HOST_NAME: histudy.jp
+    #   HOST_PATH: /var/www/html/
+    #   SSH_PORT: 22
+# -------------
+# デプロイ用SSH鍵の設定
+# -------------
+deploy_ssh_keys: &deploy_ssh_keys
+  # 以下のCirleCIに登録したSSH鍵ののフィンガープリントを記載する
+  - "xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx"
 # -------------
 # ジョブの設定
 # -------------
@@ -25,24 +41,25 @@ jobs:
       - persist_to_workspace:
           root: ~/repo
           paths:
-            - public
+            - ./
   deploy:
     executor: default
     steps:
       - attach_workspace:
           at: ./
-      - run: ls -la
-      # - add_ssh_keys:
-      #     fingerprints:
-      #       - "xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx"
-      # - run:
-      #     name: Start ssh-keyscan
-      #     command: |
-      #       ssh-keyscan -p ${SSH_PORT:-22} ${HOST_NAME} >> ~/.ssh/known_hosts
-      # - deploy:
-      #     name: Start deploy
-      #     command: |
-      #       rsync -av --delete --rsh="ssh -p ${SSH_PORT:-22}" ./public/ ${USER_NAME}@${HOST_NAME}:${HOST_PATH:-/var/www/html/}
+      - run:
+          name: Install rsync
+          command: sudo apt-get install -y rsync
+      - add_ssh_keys:
+          fingerprints: *deploy_ssh_keys
+      - run:
+          name: Start ssh-keyscan
+          command: |
+            ssh-keyscan -p ${SSH_PORT:-22} ${HOST_NAME} >> ~/.ssh/known_hosts
+      - deploy:
+          name: Start deploy
+          command: |
+            rsync -av --delete --rsh="ssh -p ${SSH_PORT:-22}" ./public/ ${USER_NAME}@${HOST_NAME}:${HOST_PATH:-/var/www/html/}
 
 # -------------
 # ワークフローの設定
@@ -55,3 +72,6 @@ workflows:
       - deploy:
           requires:
             - build
+          filters:
+            branches:
+              only: master
