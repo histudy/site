@@ -1,0 +1,15 @@
+# CircleCI 2.0 configuration file
+version: 2
+defaults: &defaults
+  working_directory: ~/repo
+    docker:
+      - image: circleci/node:8.9.1
+jobs:
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: run deploy batch
+          command: deploy.sh
