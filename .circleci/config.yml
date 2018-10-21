@@ -22,4 +22,6 @@ workflows:
   test-deploy:
     jobs:
       - deploy:
-
+          filters:
+            branches:
+              ignore: master
