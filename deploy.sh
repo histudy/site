@@ -13,7 +13,7 @@ if [ ! -e node_modules/.bin/hexo ]; then
   npm install
 fi
 
-git pull origin master
+#git pull origin master
 if [ ! -e public/.git ]; then
   if [ -e .git/worktrees ]; then
     git worktree prune
