@@ -9,8 +9,6 @@ cd ${WORKING_DIR}
 pwd
 
 echo "**** make public and node_modules directory ****"
-rm -rf public
-rm -rf node_modules
 mkdir -p public
 mkdir -p node_modules
 
