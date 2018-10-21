@@ -6,6 +6,7 @@ echo "**** set readonly directory ****"
 WORKING_DIR=$(dirname $0)
 readonly WORKING_DIR
 cd ${WORKING_DIR}
+pwd
 
 echo "**** make public and node_modules directory ****"
 mkdir -p public
