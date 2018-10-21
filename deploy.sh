@@ -16,26 +16,9 @@ if [ ! -e node_modules/.bin/hexo ]; then
   npm install
 fi
 
-if [ ! -e public/.git ]; then
-  if [ -e .git/worktrees ]; then
-    echo "**** prune worktree ****"
-    git worktree prune
-  fi
-  echo "**** add worktree ****"
-  git worktree add public master
-fi
-
-echo "**** commit base ****"
-COMMIT_MESSAGE=$(date "+Site updated: %Y-%m-%d %H:%M:%S")
-git add -A
-git commit -m "$COMMIT_MESSAGE"
-git push --allow-unrelated-histories
-
 echo "**** hexo generate ****"
 hexo generate --force
 
-echo "**** commit public ****"
-cd public
-git add -A
-git commit -m "$COMMIT_MESSAGE"
-git push --allow-unrelated-histories
+echo "**** upload server ****"
+rsync -auz --delete -e ssh ./public/ 223n@histudy.jp:/tmp/www/html/
+
