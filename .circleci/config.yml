@@ -23,7 +23,7 @@ jobs:
           command: mkdir -p ~/repo/public && mkdir -p ~/repo/node_modules
       - run:
           name: install hexo-cli
-          command: npm install -g hexo-cli
+          command: sudo npm install -g hexo-cli
       - run:
           name: install npm
           command: cd ~/repo && npm install
