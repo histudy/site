@@ -17,3 +17,9 @@ jobs:
       - run:
           name: run deploy batch
           command: deploy.sh
+workflows:
+  version: 2
+  test-deploy:
+    jobs:
+      - deploy:
+
