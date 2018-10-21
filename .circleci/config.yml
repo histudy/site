@@ -16,7 +16,7 @@ jobs:
           at: ~/repo
       - run:
           name: run deploy batch
-          command: deploy.sh
+          command: ~/repo/deploy.sh
 workflows:
   version: 2
   test-deploy:
