@@ -38,7 +38,7 @@ jobs:
           command: cat ~/.ssh/config
       - run:
           name: ssh-keyscan
-          command: ssh-keyscan histudy.jp >> ~/.ssh/known_hosts && cat ~/.ssh/known_hosts
+          command: ssh-keyscan -H histudy.jp >> ~/.ssh/known_hosts && cat ~/.ssh/known_hosts
       - run:
           name: run deploy batch
           command: rsync -auz --delete -e ssh ~/repo/public/ 223n@histudy.jp:/tmp/www/html/
