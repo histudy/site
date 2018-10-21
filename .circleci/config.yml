@@ -22,14 +22,17 @@ jobs:
           name: make public directory
           command: mkdir -p ~/repo/public && mkdir -p ~/repo/node_modules
       - run:
+          name: install hexo-cli
+          command: npm install -g hexo-cli
+      - run:
           name: install npm
-          command: if [ ! -e ~/repo/node_modules/.bin/hexo ]; then npm install; fi
+          command: cd ~/repo && npm install
       - run:
           name: generate npm
           command: cd ~/repo && npm run generate --force
       - run:
           name: run deploy batch
-          command: rsync -auz --delete -e ssh ./public/ 223n@histudy.jp:/tmp/www/html/
+          command: if [ -e ~/repo/public/index.html ]; then rsync -auz --delete -e ssh ~/repo/public/ 223n@histudy.jp:/tmp/www/html/; fi
 workflows:
   version: 2
   test-deploy:
