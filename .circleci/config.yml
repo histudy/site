@@ -6,8 +6,8 @@ general:
       - master
 defaults: &defaults
   working_directory: ~/repo
-    docker:
-      - image: circleci/node:8.9.1
+  docker:
+    - image: circleci/node:8.9.1
 jobs:
   deploy:
     <<: *defaults
