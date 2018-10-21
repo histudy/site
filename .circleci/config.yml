@@ -19,6 +19,9 @@ jobs:
           name: echo git version
           command: git --version
       - run:
+          name: echo npm version
+          command: npm --version
+      - run:
           name: run deploy batch
           command: ~/repo/deploy.sh
 workflows:
