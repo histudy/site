@@ -19,14 +19,17 @@ jobs:
           at: ~/repo
       - checkout
       - run:
-          name: echo git version
-          command: git --version
+          name: make public directory
+          command: mkdir -p ~/repo/public && mkdir -p ~/repo/node_modules
       - run:
-          name: echo npm version
-          command: npm --version
+          name: install npm
+          command: if [ ! -e ~/repo/node_modules/.bin/hexo ]; then npm install; fi
+      - run:
+          name: generate npm
+          command: cd ~/repo && npm run generate --force
       - run:
           name: run deploy batch
-          command: ~/repo/deploy.sh
+          command: rsync -auz --delete -e ssh ./public/ 223n@histudy.jp:/tmp/www/html/
 workflows:
   version: 2
   test-deploy:
