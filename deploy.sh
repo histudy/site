@@ -2,6 +2,8 @@
 
 set -e
 
+git pull origin master
+
 WORKING_DIR=$(dirname $0)
 readonly WORKING_DIR
 cd ${WORKING_DIR}
@@ -13,7 +15,6 @@ if [ ! -e node_modules/.bin/hexo ]; then
   npm install
 fi
 
-#git pull origin master
 if [ ! -e public/.git ]; then
   if [ -e .git/worktrees ]; then
     git worktree prune
