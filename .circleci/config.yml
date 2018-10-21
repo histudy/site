@@ -41,7 +41,7 @@ jobs:
           command: ssh-keyscan -H histudy.jp >> ~/.ssh/known_hosts && cat ~/.ssh/known_hosts
       - run:
           name: run deploy batch
-          command: rsync -auz --delete -e ssh ~/repo/public/ 223n@histudy.jp:/tmp/www/html/
+          command: rsync -auvz --delete -e ssh ~/repo/public/ 223n@histudy.jp:/tmp/www/html/
 workflows:
   version: 2
   test-deploy:
