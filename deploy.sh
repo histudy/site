@@ -18,6 +18,7 @@ if [ ! -e node_modules/.bin/hexo ]; then
 fi
 
 echo "**** hexo generate ****"
+which hexo
 hexo generate --force
 
 echo "**** upload server ****"
