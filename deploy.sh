@@ -15,14 +15,10 @@ mkdir -p node_modules
 if [ ! -e node_modules/.bin/hexo ]; then
   echo "**** install npm ****"
   npm install
-else
-  npm install -g hexo
 fi
 
 echo "**** hexo generate ****"
-which hexo
 hexo generate --force
 
 echo "**** upload server ****"
 rsync -auz --delete -e ssh ./public/ 223n@histudy.jp:/tmp/www/html/
-
