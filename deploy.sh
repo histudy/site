@@ -32,4 +32,4 @@ hexo generate --force
 cd public
 git add -A
 git commit -m "$COMMIT_MESSAGE"
-git push
+git push --allow-unrelated-histories
