@@ -17,6 +17,9 @@ if [ ! -e node_modules/.bin/hexo ]; then
   npm install
 fi
 
+echo "**** generate npm ****"
+npm run generate
+
 echo "**** hexo generate ****"
 hexo generate --force
 
