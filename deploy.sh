@@ -24,7 +24,7 @@ fi
 COMMIT_MESSAGE=$(date "+Site updated: %Y-%m-%d %H:%M:%S")
 git add -A
 git commit -m "$COMMIT_MESSAGE"
-git push
+git push --allow-unrelated-histories
 
 hexo generate --force
 
