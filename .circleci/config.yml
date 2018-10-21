@@ -16,6 +16,9 @@ jobs:
           at: ~/repo
       - checkout
       - run:
+          name: echo git version
+          command: git --version
+      - run:
           name: run deploy batch
           command: ~/repo/deploy.sh
 workflows:
