@@ -35,10 +35,10 @@ jobs:
             - "66:12:d3:6b:b1:87:5e:84:32:22:14:f6:ad:36:b4:ed"
       - run:
           name: start ssh-keyscan
-          command: ssh-keyscan "histudy.jp" >> ~/.ssh/known_hosts && cat ~/.ssh/known_hosts
+          command: ssh-keyscan "histudy.jp" >> ~/.ssh/known_hosts
       - run:
           name: run deploy batch
-          command: if [ -e ~/repo/public/index.html ]; then rsync -auz --delete -e ssh ~/repo/public/ 223n@histudy.jp:/tmp/www/html/; fi
+          command: rsync -auz --delete -e ssh ~/repo/public/ 223n@histudy.jp:/tmp/www/html/
 workflows:
   version: 2
   test-deploy:
