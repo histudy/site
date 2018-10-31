@@ -99,3 +99,50 @@ sudo curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
     - 現在は[hueman]を少し変更して使用中
 
 [hueman]:https://github.com/ppoffice/hexo-theme-hueman
+
+## 手動による反映方法
+
+現在、GitHub Pagesからサーバに移行したため、手動で「サイトの生成」「masterブランチに登録」「サーバ側でmasterブランチをpull」を行う必要があります。
+
+0. 準備
+
+developブランチとmasterブランチをローカルにcloneします。
+
+1. サイトの生成
+
+サイトを生成します。
+
+```shell
+npm run generate
+```
+
+2. masterブランチに登録
+
+developブランチのpublicディレクトリ配下に生成されますので、developブランチ配下の内容をmasterブランチにコピーします。
+
+ディレクトリ構成は、以下の前提です。
+
+* /
+  * site_develop ... siteのdevelopブランチです。
+    * public ... hexoで生成したサイトです。
+  * site_master ... siteのmasterブランチです。
+
+```shell
+cd /
+cp -rf ./site_develop/public/* ./site_master
+cd ./site_master
+git add *
+git commit -m "add log"
+git push
+```
+
+3. サーバ側でmasterブランチをpull
+
+サーバに接続してmasterブランチをpullします。
+
+```shell
+cd /var/www/html
+sudo git pull
+```
+
+以上で、手動による反映方法は完了です。
