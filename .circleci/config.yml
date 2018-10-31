@@ -5,16 +5,28 @@
 #  HOST_NAME
 #  USER_NAME
 #  HOST_DEPLOY_PATH
+#  SSH_PORT (Optional)
 #
 version: 2
 general:
   branches:
     ignore:
       - master
+
+## ------------------
+## ビルド環境
+## ------------------
 defaults: &defaults
   working_directory: ~/repo
   docker:
     - image: circleci/node:10.12.0-stretch
+
+## ------------------
+## デプロイ用SSH鍵の設定
+## ------------------
+deploy_ssh_keys: &deploy_ssh_keys
+  - "66:12:d3:6b:b1:87:5e:84:32:22:14:f6:ad:36:b4:ed"
+
 jobs:
   deploy:
     <<: *defaults
@@ -38,17 +50,16 @@ jobs:
           name: generate npm
           command: cd ~/repo && hexo generate --force
       - add_ssh_keys:
-          fingerprints:
-            - "66:12:d3:6b:b1:87:5e:84:32:22:14:f6:ad:36:b4:ed"
+          fingerprints: *deploy_ssh_keys
       - run:
           name: check .ssh
           command: cat ~/.ssh/config
       - run:
           name: ssh-keyscan
-          command: ssh-keyscan -H ${HOST_NAME} >> ~/.ssh/known_hosts && cat ~/.ssh/known_hosts
+          command: ssh-keyscan ${HOST_NAME} -p ${SSH_PORT:-22}  >> ~/.ssh/known_hosts && cat ~/.ssh/known_hosts
       - run:
           name: run deploy batch
-          command: rsync -auvz --delete -e ssh ~/repo/public/ ${USER_NAME}@${HOST_NAME}:${HOST_DEPLOY_PATH}
+          command: rsync -auvz --delete -e "ssh -p ${SSH_PORT:-22}" ~/repo/public/ ${USER_NAME}@${HOST_NAME}:${HOST_DEPLOY_PATH}
 workflows:
   version: 2
   test-deploy:
