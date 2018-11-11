@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.7.1"
+    "version": "3.8.0"
   },
   "dependencies": {
-    "hexo": "*",
+    "hexo": "^3.8.0",
     "hexo-filter-fix-cjk-spacing": "*",
     "hexo-generator-archive": "*",
     "hexo-generator-category": "*",
