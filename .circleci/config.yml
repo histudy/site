@@ -49,6 +49,9 @@ jobs:
       - run:
           name: generate npm
           command: cd ~/repo && hexo generate --force
+      - run:
+          name: chmod
+          command: cd ~/repo && chmod u+rw,g+rw,o+r public -R
       - add_ssh_keys:
           fingerprints: *deploy_ssh_keys
       - run:
