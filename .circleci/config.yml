@@ -62,7 +62,7 @@ jobs:
           command: ssh-keyscan ${HOST_NAME} -p ${SSH_PORT:-22}  >> ~/.ssh/known_hosts && cat ~/.ssh/known_hosts
       - run:
           name: run deploy batch
-          command: rsync -rlOtcv --delete -e "ssh -p ${SSH_PORT:-22}" ~/repo/public/ ${USER_NAME}@${HOST_NAME}:${HOST_DEPLOY_PATH}
+          command: rsync -rlOtv --delete -e "ssh -p ${SSH_PORT:-22}" ~/repo/public/ ${USER_NAME}@${HOST_NAME}:${HOST_DEPLOY_PATH}
 workflows:
   version: 2
   test-deploy:
