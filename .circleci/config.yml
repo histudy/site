@@ -49,6 +49,9 @@ jobs:
       - run:
           name: generate npm
           command: cd ~/repo && hexo generate --force
+      - run:
+          name: chmod
+          command: cd ~/repo && chmod u+rw,g+rw,o+r public -R
       - add_ssh_keys:
           fingerprints: *deploy_ssh_keys
       - run:
@@ -59,7 +62,7 @@ jobs:
           command: ssh-keyscan ${HOST_NAME} -p ${SSH_PORT:-22}  >> ~/.ssh/known_hosts && cat ~/.ssh/known_hosts
       - run:
           name: run deploy batch
-          command: rsync -rlOtcv --delete -e "ssh -p ${SSH_PORT:-22}" ~/repo/public/ ${USER_NAME}@${HOST_NAME}:${HOST_DEPLOY_PATH}
+          command: rsync -rlOtv --delete -e "ssh -p ${SSH_PORT:-22}" ~/repo/public/ ${USER_NAME}@${HOST_NAME}:${HOST_DEPLOY_PATH}
 workflows:
   version: 2
   test-deploy:
