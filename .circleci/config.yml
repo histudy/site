@@ -10,7 +10,7 @@
 version: 2
 general:
   branches:
-    ignore:
+    only:
       - master
 
 ## ------------------
@@ -70,4 +70,4 @@ workflows:
       - deploy:
           filters:
             branches:
-              ignore: master
+              only: master
