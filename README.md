@@ -1,6 +1,6 @@
 # Himeji IT Study Meeting
 
-[![Build Status](https://travis-ci.org/histudy/histudy.github.io.svg?branch=develop)](https://travis-ci.org/histudy/histudy.github.io)
+[![CircleCI](https://circleci.com/gh/histudy/site.svg?style=svg)](https://circleci.com/gh/histudy/site)
 
 ## テスト方法
 
