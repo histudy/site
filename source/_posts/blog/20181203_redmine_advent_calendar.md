@@ -14,8 +14,6 @@ tags:
 
 みなさん、はじめまして！
 
-姫路IT系勉強会の [@223n](https://github.com/223n/) です。
-
 この記事は、[Redmine Advent Calendar 2018](https://adventar.org/calendars/3352/)の４日目です。
 
 今回は、姫路IT系勉強会で利用しているRedmineの運用事例について紹介したいと思います。
@@ -168,3 +166,9 @@ Redmineのテーマやプラグインを試してみたい、新しいバージ�
 先のvagrant-redmineでも使われているのですが、設定はもちろんのこと、言語ファイルのカスタマイズやステータス、トラッカー、ワークフローなどの初期設定も行うことができます。
 
 手作業での構築が面倒な方などには便利ではないでしょうか？
+
+## 書いた人
+
+* [姫路IT軽勉強会](https://histudy.jp/)
+  * @223n ([GitHub](https://github.com/223n/))
+  * @wate ([Twitter](https://twitter.com/aWebprogrammer/)/[GitHub](https://github.com/wate/))
