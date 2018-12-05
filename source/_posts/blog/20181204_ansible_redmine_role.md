@@ -1,6 +1,6 @@
 ---
 title: AnsibleでRedmineを設置するロールを作ったお話
-date: 2018-12-03
+date: 2018-12-06
 categories:
   - blog
 tags:
