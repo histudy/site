@@ -7,7 +7,7 @@ date: 2014-07-08 12:42:00
 
 ------------------------------------------------------------------------
 
-### Hack Cafe@姫路とは
+# Hack Cafe@姫路とは
 
 <img src="https://sites.google.com/site/himejiitstudy/_/rsrc/1333786394331/othermeetings/hackcafe/hackcafe.jpg" width="191" height="320" />
 
@@ -17,28 +17,25 @@ Hack Cafe@姫路とは水曜の夕方、姫路駅周辺のカフェや喫茶店�
 
 おこなった作業については作業記録としてGoogle Docsに書いて、後で振り返られるようにします。
 
--   <https://docs.google.com/document/d/1IKYQGjw7TP9nhVQaX_eIt7s6BwkKfRG-ox6DfCCHqxc/edit>
+- <https://docs.google.com/document/d/1IKYQGjw7TP9nhVQaX_eIt7s6BwkKfRG-ox6DfCCHqxc/edit>
 
-### 類似イベント
+# 類似イベント
 
--   Debian Hack Cafe - 東京エリアDebian勉強会 - Debian: <http://tokyodebian.alioth.debian.org/hackcafe.html>
--   FrontPage - TranslateCafeWiki: <http://translatecafe.org/wiki/>
--   大阪(ミナミ)翻訳カフェ - TranslateCafeWiki: [http://translatecafe.org/wiki/wiki.cgi?page=%C2%E7%BA%E5(%A5%DF%A5%CA%A5%DF)%CB%DD%CC%F5%A5%AB%A5%D5%A5%A7](http://translatecafe.org/wiki/wiki.cgi?page=%C2%E7%BA%E5%28%A5%DF%A5%CA%A5%DF%29%CB%DD%CC%F5%A5%AB%A5%D5%A5%A7)
--   もくもく会ポータル: <http://mokumokukai.tumblr.com/>
+- Debian Hack Cafe - 東京エリアDebian勉強会 - Debian: <http://tokyodebian.alioth.debian.org/hackcafe.html>
+- FrontPage - TranslateCafeWiki: <http://translatecafe.org/wiki/>
+- 大阪(ミナミ)翻訳カフェ - TranslateCafeWiki: [http://translatecafe.org/wiki/wiki.cgi?page=%C2%E7%BA%E5(%A5%DF%A5%CA%A5%DF)%CB%DD%CC%F5%A5%AB%A5%D5%A5%A7](http://translatecafe.org/wiki/wiki.cgi?page=%C2%E7%BA%E5%28%A5%DF%A5%CA%A5%DF%29%CB%DD%CC%F5%A5%AB%A5%D5%A5%A7)
+- もくもく会ポータル: <http://mokumokukai.tumblr.com/>
 
-開催/参加方法
--------------
+# 開催/参加方法
 
 Twitterなどで誰かが [\#himejihack](https://twitter.com/#%21/search/%23himejihack) というハッシュタグをつけて「HackCafeを開催します」とツィートすれば開催されます。上で水曜と書きましたが突発的に開催されるかもしれません。
 参加方法はとてもゆるやかです。告知された場所に来るだけです。事前登録の必要もありません。自分が決めたテーマの作業に必要なものは持ってきましょう。またカフェや喫茶店、ファストフード店でおこないますので、コーヒーなどは必ず注文してから席につきましょう。
 
-開催時間
---------
+## 開催時間
 
 19時から21時ぐらいまで。(主催者とその場の雰囲気による)
 
-開催場所
---------
+## 開催場所
 
 [サンマルクカフェ 姫路みゆき通店](http://r.gnavi.co.jp/kabf053/)  
 主にやっているところ。WiFiはau系。電源使えません。
