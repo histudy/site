@@ -177,7 +177,7 @@ JR姫路駅から近い。南側より北側。
 
 長くなったので別ページに分割しました。
 
--   [会場に使えそうな施設リスト](https://sites.google.com/site/himejiitstudy/organizememo/places)
+- [会場に使えそうな施設リスト](https://sites.google.com/site/himejiitstudy/organizememo/places)
 
 ### 駐車場
 
