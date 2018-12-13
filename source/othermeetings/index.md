@@ -14,15 +14,13 @@ update: 2018-12-09
   - [https://histudy.connpass.com](https://histudy.connpass.com)
 - 開催時期: 毎月第3土曜日 13:30-17:00
 - 開催場所: 姫路獨協大学サテライト教室
-
-ここです。DoorKeeperのコミュニティには、姫路の勉強会も参加しているので、姫路で興味のある人は参加してください。
+- ここです。DoorKeeperのコミュニティには、姫路の勉強会も参加しているので、姫路で興味のある人は参加してください。
 
 ## 姫路ゆるいWeb勉強会
 
 - Webサイト: [https://www.facebook.com/himejiyuruiweb](https://www.facebook.com/himejiyuruiweb)
 - 開催時期: 毎月1回 (最近、不定期になってます)
-
-姫路周辺のWeb制作者の勉強会です。
+- 姫路周辺のWeb制作者の勉強会です。
 
 ## 姫路JavaScript勉強会
 
@@ -53,5 +51,4 @@ update: 2018-12-09
 - Webサイト: [http://kobexr.blogspot.jp/](http://kobexr.blogspot.jp/)
   - [https://www.facebook.com/kobexr2014](https://www.facebook.com/kobexr2014)
 - 開催時期: 不定期
-
-R言語の勉強会です。
+- R言語の勉強会です。
