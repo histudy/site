@@ -3,26 +3,29 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.8.0"
+    "version": ""
   },
   "dependencies": {
-    "hexo": "^3.8.0",
-    "hexo-filter-fix-cjk-spacing": "*",
-    "hexo-generator-archive": "*",
-    "hexo-generator-category": "*",
-    "hexo-generator-feed": "*",
-    "hexo-generator-index": "*",
-    "hexo-generator-json-content": "*",
-    "hexo-generator-sitemap": "*",
-    "hexo-generator-tag": "*",
-    "hexo-renderer-ejs": "*",
-    "hexo-renderer-marked": "*",
-    "hexo-renderer-stylus": "*",
-    "hexo-server": "^0.3.3"
+    "hexo": "",
+    "hexo-filter-fix-cjk-spacing": "",
+    "hexo-generator-archive": "",
+    "hexo-generator-category": "",
+    "hexo-generator-feed": "",
+    "hexo-generator-index": "",
+    "hexo-generator-json-content": "",
+    "hexo-generator-sitemap": "",
+    "hexo-generator-tag": "",
+    "hexo-renderer-ejs": "",
+    "hexo-renderer-marked": "",
+    "hexo-renderer-stylus": "",
+    "hexo-server": ""
   },
   "scripts": {
     "start": "hexo server",
     "generate": "hexo generate",
-    "deploy": "hexo deploy --generate"
+    "deploy": "hexo deploy --generate",
+    "build": "hexo generate",
+    "clean": "hexo clean",
+    "server": "hexo server"
   }
 }
