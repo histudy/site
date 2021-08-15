@@ -1,0 +1,15 @@
+baseURL: 'https://histudy.jp/'
+title: '姫路IT系勉強会'
+
+defaultContentLanguage: 'ja'
+languageCode: 'ja'
+hasCJKLanguage: true
+
+theme: binario
+
+taxonomies:
+  category: categories
+  tag: tags
+
+archetypeDir: scaffolds
+contentDir: source
