@@ -1,0 +1,9 @@
+{{ define "main" }}
+	<main class="main">
+    <div class="cards">
+      {{ range (where .Data.Pages "Section" "histudy") }}
+        {{ .Render "listforhome" }}
+      {{ end }}
+    </div>
+	</main>
+{{ end }}
