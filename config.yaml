@@ -7,9 +7,5 @@ hasCJKLanguage: true
 
 theme: binario
 
-taxonomies:
-  category: categories
-  tag: tags
-
 archetypeDir: scaffolds
 contentDir: source
