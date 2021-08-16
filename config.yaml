@@ -8,4 +8,3 @@ hasCJKLanguage: true
 theme: binario
 
 archetypeDir: scaffolds
-contentDir: source
