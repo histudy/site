@@ -11,10 +11,18 @@ archetypeDir: scaffolds
 
 menu:
   main:
-  - identifier: about
-    name: About
-    url: /about/
+  - identifier: logs
+    name: 開催履歴
+    url: /categories/開催履歴/
+    weight: -40
 
   - identifier: topic
     name: Topics
     url: /topic/
+    weight: -20
+
+  - identifier: about
+    name: About
+    url: /about/
+    weight: 0
+
