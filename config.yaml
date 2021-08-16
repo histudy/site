@@ -8,3 +8,13 @@ hasCJKLanguage: true
 theme: binario
 
 archetypeDir: scaffolds
+
+menu:
+  main:
+  - identifier: about
+    name: About
+    url: /about/
+
+  - identifier: topic
+    name: Topics
+    url: /topic/
