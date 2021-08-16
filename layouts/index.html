@@ -1,9 +1,10 @@
 {{ define "main" }}
 	<main class="main">
-    <div class="cards">
-      {{ range (where .Data.Pages "Section" "histudy") }}
+      {{ range (where .Pages "Section" "histudy") }}
         {{ .Render "listforhome" }}
       {{ end }}
-    </div>
+      {{ range (where .Pages "Section" "kakogawa_infra") }}
+        {{ .Render "listforhome" }}
+      {{ end }}
 	</main>
 {{ end }}

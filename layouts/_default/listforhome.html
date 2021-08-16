@@ -1,8 +1,8 @@
-<div class="page block">
-  <h1 class="page__title">{{ .Title }}</h1>
-</div>
+<h2 class="page block">{{ .Title }}</h2>
+
 <div class="cards">
   {{ range first 6 .Paginator.Pages }}
     {{ .Render "cards" }}
   {{ end }}
 </div>
+<a href="{{ .Permalink }}">さらに見る</a>
