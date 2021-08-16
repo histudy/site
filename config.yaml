@@ -26,3 +26,10 @@ menu:
     url: /about/
     weight: 0
 
+Params:
+  mainSections:
+    - meeting-logs
+  colorTheme: dark-green
+  Social:
+    github: "histudy"
+
