@@ -435,7 +435,7 @@ button:not(:-moz-focusring):focus > .main-nav__btn-box {
 .entry__content {
 	flex: 1 0 auto;
 	margin: 0;
-	overflow: auto;
+	//overflow: auto; FireFox 91 カード表示の時、縦スクロールが発生するため
 	color: #c3c3c3;
 }
 

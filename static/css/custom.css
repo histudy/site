@@ -5,11 +5,13 @@
   padding-right: 1rem;
   text-size: 1.25rem;
   font-weight: 600;
+  text-align: center;
 }
 
 .entry {
   max-width: 60rem;
 }
+
 .mb1 {
   margin-bottom: 0.9375rem;
 }
