@@ -27,9 +27,11 @@ menu:
     weight: 0
 
 Params:
-  mainSections:
-    - meeting-logs
+  dateFormat: "2006-01-02"
+  Entry:
+    meta:
+      - date
   colorTheme: dark-green
   Social:
-    github: "histudy"
+    github: 'histudy'
 

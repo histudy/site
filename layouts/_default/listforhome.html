@@ -2,7 +2,14 @@
 
 <div class="cards">
   {{ range first 6 .Paginator.Pages }}
-    {{ .Render "cards" }}
+    <div class="card{{ if and (ge ($.Param "columns") 1) (le ($.Param "columns") 3) }} card--{{ $.Param "columns" }}col{{ else }} card--2col{{ end }}">
+
+      <article class="entry card__box block">
+        {{- partial "entry/featured.html" (dict "page" . "link" .RelPermalink) }}
+        <h1 class="entry__title title-excerpt"><a class="entry__title-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        {{- partial "entry/meta.html" (dict "page" . "class" "tal") }}
+      </article>
+    </div>
   {{ end }}
 </div>
 <a href="{{ .Permalink }}">さらに見る</a>
