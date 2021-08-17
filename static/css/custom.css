@@ -1,0 +1,15 @@
+.cards__more-link {
+  display: block;
+  width: 100%;
+  padding: 0.3125rem;
+  padding-right: 1rem;
+  text-size: 1.25rem;
+  font-weight: 600;
+}
+
+.entry {
+  max-width: 60rem;
+}
+.mb1 {
+  margin-bottom: 0.9375rem;
+}

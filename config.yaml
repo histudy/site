@@ -34,4 +34,6 @@ Params:
   colorTheme: dark-green
   Social:
     github: 'histudy'
-
+  customCSS:
+    - "css/custom.css"
+  mainMenuAlignment: "right"
