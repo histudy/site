@@ -9,11 +9,14 @@
 		</div>
 		{{- end }}
 
+   <h2 class="block">姫路IT系勉強会 開催履歴</h2>
       {{ range (where .Pages "Section" "histudy") }}
         {{ .Render "listforhome" }}
       {{ end }}
-      {{ range (where .Pages "Section" "kakogawa_infra") }}
-        {{ .Render "listforhome" }}
-      {{ end }}
+
+   <h2 class="block">加古川IT系インフラ勉強会  開催履歴</h2>
+    {{ range (where .Pages "Section" "kakogawa_infra") }}
+      {{ .Render "listforhome" }}
+    {{ end }}
 	</main>
 {{ end }}

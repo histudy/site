@@ -1,5 +1,3 @@
-<h2 class="block">{{ .Title }}</h2>
-
 <div class="cards">
   {{ range first 6 .Paginator.Pages }}
     <div class="card{{ if and (ge ($.Param "columns") 1) (le ($.Param "columns") 3) }} card--{{ $.Param "columns" }}col{{ else }} card--2col{{ end }}">
