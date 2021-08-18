@@ -7,8 +7,6 @@ hasCJKLanguage: true
 
 theme: binario
 
-archetypeDir: scaffolds
-
 menu:
   main:
   - identifier: logs
