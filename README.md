@@ -4,145 +4,91 @@
 
 ## テスト方法
 
-1. サイトの生成にHexoを利用しているので利用するためのパッケージをインストールします。
+1. サイトの生成に[Hugo](https://gohugo.io/)を利用しているのでインストールします。
 
+    Linux: [リリースページ](https://github.com/gohugoio/hugo/releases)から最新のバイナリを `/usr/local/bin` に入れるのが簡単です。  
+    
+    Mac: Home Brewが使えます。
     ```shell
-    sudo apt install git nodejs nodejs-legacy npm
+    brew install hugo
+    ```
+    
+    Windows: [Chocolatey](https://chocolatey.org/)が使えます。
+    ``` 
+    choco install hugo -confirm
     ```
 
-2. Hexoをインストールします。
 
-    ```shell
-    sudo npm install -g hexo-cli
-    ```
-
-3. このリポジトリをクローンします。
+2. このリポジトリをクローンします。
 
     ```shell
     git clone https://github.com/histudy/site
     ```
 
-4. クローンしたリポジトリに必要なパッケージをインストールします。
-
-    ``` shell
-    cd site/
-    npm install
-    ```
-
-5. ビルドしてHexoのサーバーを起動します。
+3. HugoのWEBサーバーを起動します。
 
     ```shell
-    hexo g
-    hexo s
+    hugo serve
     ```
 
-6. ブラウザで [http://localhost:4000/](http://localhost:4000/) にアクセスすると内容の確認ができます。
+4. ブラウザで [http://localhost:1313/](http://localhost:1313/) にアクセスするとサイトが表示されます。
 
 ## 各種コマンド
 
-### Hexoサーバーを起動する
+### Hugoサーバーを起動する
 
 ```shell
-npm run start
+hugo serve
 ```
 
-ブラウザで [http://localhost:4000/](http://localhost:4000/) にアクセスすると内容の確認ができます。
+ブラウザで [http://localhost:1313/](http://localhost:1313/) にアクセスするとサイトが表示されます。
 
-### サイトを生成する
+### ページを作成する
 
 ```shell
-npm run generate
+hugo new foo.md
 ```
 
-サイトが生成されます。
+`content/foo.md` ファイルが生成され、[http://localhost:1313/foo/]() に内容が表示されます。
 
-### デプロイ(Github Pageに反映する)
+### 勉強会の開催履歴ページを作成する
 
 ```shell
-npm run deploy
+hugo new histudy/2021/07.md
 ```
+`archetype` フォルダの `histudy.md` をテンプレートとして、`content/histudy/2021/07.md` が生成されます。  
+加古川IT系インフラ勉強会も同様にテンプレートを用意しています。
 
-## こんなときは
-
-### hexoを実行しようとすると、「no method 'find'」というエラーが発生する
-
-nodejsのバージョンが古いため、findメソッドが未実装のバージョンがインストールされている可能性があります。
+## コンテンツフォルダの構成
 
 ```shell
-nodejs -v
+content
+├── _index.md  // トップページ https://histudy.jp/
+├── about
+│   ├── _index.md // Aboutページ /about/
+│   └── beginning.md
+├── histudy
+│   ...
+│   ├── 2018
+│   ├── 2019
+│   ├── 2021
+│   │   └── 01.md // 履歴個別ページ /histudy/2021/01/
+│   └── _index.md // 姫路IT系勉強会 開催履歴 一覧ページ /histudy/ 
+├── images
+├── kakogawa_infra
+│   ...
+│   ├── 2018
+│   ├── 2019
+│   │   └── 01.md
+│   └── _index.md
+├── news
+│   ├── 20120717.md
+│   ...
+│   ├── 20170122.md
+│   └── 20170221.md
+├── organizememo
+├── othermeetings
+└── topic // トピック一覧ページ（従来の /blog/ ） /topic/
+    ├── 20181203_redmine_advent_calendar.md   // トピック個別ページ
+    └── 20181206_ansible_redmine_role.md
 ```
-
-apt-getからは、古いバージョンのnodejsがインストールされてしまう可能性があるため、
-v4以上をインストールしてください。
-
-* v4をインストールする場合
-
-```shell
-sudo curl -sL https://deb.nodesource.com/setup_4.x | sudo bash -
-```
-
-* v6をインストールする場合
-
-```shell
-sudo curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -
-```
-
-* v10をインストールする場合
-
-```shell
-sudo curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
-```
-
-## 検討課題
-
-* テンプレートのカスタマイズとか
-  * 現在は[hueman]を少し変更して使用中
-
-[hueman]:https://github.com/ppoffice/hexo-theme-hueman
-
-## 手動による反映方法
-
-現在、[CircleCI](https://circleci.com/gh/histudy/site)による自動生成・配信の環境が整っているため、**手動による反映は不要です**。
-
-1. 準備
-
-    developブランチとmasterブランチをローカルにcloneします。
-
-2. サイトの生成
-
-    サイトを生成します。
-
-    ```shell
-    npm run generate
-    ```
-
-3. masterブランチに登録
-
-    developブランチのpublicディレクトリ配下に生成されますので、developブランチ配下の内容をmasterブランチにコピーします。
-
-    ディレクトリ構成は、以下の前提です。
-
-    * /
-    * site_develop ... siteのdevelopブランチです。
-        * public ... hexoで生成したサイトです。
-    * site_master ... siteのmasterブランチです。
-
-    ```shell
-    cd /
-    cp -rf ./site_develop/public/* ./site_master
-    cd ./site_master
-    git add *
-    git commit -m "add log"
-    git push
-    ```
-
-4. サーバ側でmasterブランチをpull
-
-    サーバに接続してmasterブランチをpullします。
-
-    ```shell
-    cd /var/www/html
-    sudo git pull
-    ```
-
-以上で、手動による反映方法は完了です。
