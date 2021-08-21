@@ -8,7 +8,9 @@
   text-align: center;
 }
 
-.entry {
+.entry,
+.page__content
+{
   max-width: 60rem;
 }
 
