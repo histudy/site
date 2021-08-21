@@ -10,9 +10,3 @@ ITに関連することを幅広く話し合っています。
 毎月第3土曜日に開催しています。
 
 最新の開催情報、参加申し込みは [Connpass](https://histudy.connpass.com/) をご覧下さい。
-
-### オンラインコミュニティ
-* [Discord](https://discord.gg/rZCeScB)
-* [Slack](https://histudy.slack.com/)
-
-オンライン開催はDiscordにて行います。
