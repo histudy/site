@@ -8,8 +8,6 @@ tags:
   - 加古川IT系インフラ勉強会
 ---
 
-# AnsibleでRedmineを設置するロールを作ったお話
-
 みなさん、こんにちは。
 
 この記事は、[Redmine Advent Calendar 2018](https://adventar.org/calendars/3352/)と[Ansible Advent Calendar 2018](https://qiita.com/advent-calendar/2018/ansible/)の６日目です。
