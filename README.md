@@ -59,6 +59,20 @@ hugo new histudy/2021/07.md
 `archetype` フォルダの `histudy.md` をテンプレートとして、`content/histudy/2021/07.md` が生成されます。  
 加古川IT系インフラ勉強会も同様にテンプレートを用意しています。
 
+#### [HackMD](https://hackmd.io/)のページから開催履歴を生成
+
+例えば、姫路IT系勉強会 2021年7月の HackMD URL
+
+> https://hackmd.io/aVHxec9eRkakAkecJ4gyMg
+
+IDだけをシェルスクリプトの引数として渡して実行。
+
+```
+sh add-meeting-log.sh aVHxec9eRkakAkecJ4gyMg
+```
+
+
+
 ## コンテンツフォルダの構成
 
 ```shell
