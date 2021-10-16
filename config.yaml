@@ -9,9 +9,9 @@ theme: binario
 
 menu:
   main:
-  - identifier: logs
+  - identifier: categories
     name: 開催履歴
-    url: /categories/開催履歴/
+    url: /categories/meeting-logs/
     weight: -40
 
   - identifier: topic
