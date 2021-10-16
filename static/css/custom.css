@@ -12,6 +12,7 @@
 .page__content
 {
   max-width: 60rem;
+  line-height: 1.8;
 }
 
 .mb1 {
