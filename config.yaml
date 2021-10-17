@@ -11,7 +11,7 @@ menu:
   main:
   - identifier: categories
     name: 開催履歴
-    url: /categories/meeting-logs/
+    url: /categories/meeting-log/
     weight: -40
 
   - identifier: topic
