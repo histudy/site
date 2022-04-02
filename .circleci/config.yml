@@ -22,8 +22,8 @@ jobs:
       - attach_workspace:
             at: .
       - add_ssh_keys:
-          fingerprints: 
-            - "3a:66:3f:f0:d9:6b:82:77:70:ad:e2:6d:88:88:61:44"
+          fingerprints:
+            - "66:12:d3:6b:b1:87:5e:84:32:22:14:f6:ad:36:b4:ed"
       - run:
           name: Add known host
           command: ssh-keyscan $HOST_NAME >> ~/.ssh/known_hosts
