@@ -22,7 +22,7 @@ esac
 
 MEETING_DATE=$(grep '\* 開催日.*' ${FILE_NAME} | grep -oP '[0-9]{4}/[0-9]{1,2}/[0-9]{1,2}')
 
-echo "Generate ${MEETING_PLACE} ${MEETING_DATE} meeting log."
+echo "Generate ${MEETING_PLACE} ${MEETING_DATE} meeting log by hugo."
 
 YEAR=$(echo $MEETING_DATE | sed -r 's#([0-9]{4})/[0-9]{1,2}/[0-9]{1,2}#\1#')
 MONTH=$(echo $MEETING_DATE | sed -r 's#[0-9]{4}/([0-9]{1,2})/[0-9]{1,2}#\1#')
@@ -34,11 +34,10 @@ fi
 
 DEST_MD=$(echo "content/${MEETING_DIR}/${YEAR}/${MONTH}.md")
 
-echo Try create $DEST_MD
-
 hugo new ${MEETING_DIR}/${YEAR}/${MONTH}.md
 
-# フロントマター書き換え
+echo Rewrite front matter ${DEST_MD}
+
 sed -i -r "s/(title: 姫路IT系勉強会 )YYYY.MM/\1${YEAR}.${MONTH}/" ${DEST_MD}
 sed -i -r "s/(title: 加古川IT系インフラ勉強会 )YYYY.MM/\1${YEAR}.${MONTH}/" ${DEST_MD}
 sed -i -r "s#date:.*#date: ${YEAR}-${MONTH}-${DAY}#" ${DEST_MD}
