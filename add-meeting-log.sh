@@ -8,9 +8,12 @@ echo Processing ${FILE_NAME}...
 
 # Hugoのサイト生成に必要なデータをDLファイルより取得する
 
-MEETING_PLACE=$(grep '^# \{1,\}\(姫路\|加古川\).*勉強会.*$' ${FILE_NAME} | grep -o '\(姫路\|加古川\)')
+MEETING_PLACE=$(grep '^# \{1,\}\(姫路\|加古川\).*勉強会.*$' ${FILE_NAME} | grep -o '\(姫路\|加古川\)') && true
 
-# TODO: 姫路勉強会か加古川インフラ系のログ MD か判定する
+if test -z ${MEETING_PLACE} ; then
+  echo Abort: File does not seem to be meeting log.
+  exit 1
+fi
 
 case ${MEETING_PLACE} in
   姫路) MEETING_DIR=histudy ;;
