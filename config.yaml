@@ -1,0 +1,37 @@
+baseURL: 'https://histudy.jp/'
+title: '姫路IT系勉強会'
+
+defaultContentLanguage: 'ja'
+languageCode: 'ja'
+hasCJKLanguage: true
+
+theme: binario
+
+menu:
+  main:
+  - identifier: categories
+    name: 開催履歴
+    url: /categories/meeting-log/
+    weight: -40
+
+  - identifier: topic
+    name: Topics
+    url: /topic/
+    weight: -20
+
+  - identifier: about
+    name: About
+    url: /about/
+    weight: 0
+
+Params:
+  dateFormat: "2006-01-02"
+  Entry:
+    meta:
+      - date
+  colorTheme: dark-green
+  Social:
+    github: 'histudy'
+  customCSS:
+    - "css/custom.css"
+  mainMenuAlignment: "right"

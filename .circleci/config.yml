@@ -7,67 +7,42 @@
 #  HOST_DEPLOY_PATH
 #  SSH_PORT (Optional)
 #
-version: 2
+version: 2.1
 general:
   branches:
     only:
       - master
 
-## ------------------
-## ビルド環境
-## ------------------
-defaults: &defaults
-  working_directory: ~/repo
-  docker:
-    - image: circleci/node:10.12.0-stretch
-
-## ------------------
-## デプロイ用SSH鍵の設定
-## ------------------
-deploy_ssh_keys: &deploy_ssh_keys
-  - "b3:84:16:46:e8:69:64:b3:ad:40:18:e6:d4:7e:b5:b7"
-
 jobs:
   deploy:
-    <<: *defaults
+    docker:
+      - image: cimg/base:2021.04
     steps:
+      - checkout
+      - attach_workspace:
+            at: .
+      - add_ssh_keys:
+          fingerprints:
+            - "66:12:d3:6b:b1:87:5e:84:32:22:14:f6:ad:36:b4:ed"
+      - run:
+          name: Add known host
+          command: ssh-keyscan $HOST_NAME >> ~/.ssh/known_hosts
       - run:
           name: install rsync
-          command: sudo apt-get update && sudo apt-get install -y rsync
-      - attach_workspace:
-          at: ~/repo
-      - checkout
+          command: sudo apt update && sudo apt install -y rsync
       - run:
-          name: make public directory
-          command: mkdir -p ~/repo/public && mkdir -p ~/repo/node_modules
-      - run:
-          name: install hexo-cli
-          command: sudo npm install -g hexo-cli
-      - run:
-          name: install npm
-          command: cd ~/repo && npm install
-      - run:
-          name: generate npm
-          command: cd ~/repo && hexo generate --force
-      - run:
-          name: chmod
-          command: cd ~/repo && chmod u+rw,g+rw,o+r public -R
-      - add_ssh_keys:
-          fingerprints: *deploy_ssh_keys
-      - run:
-          name: check .ssh
-          command: cat ~/.ssh/config
-      - run:
-          name: ssh-keyscan
-          command: ssh-keyscan ${HOST_NAME} -p ${SSH_PORT:-22}  >> ~/.ssh/known_hosts && cat ~/.ssh/known_hosts
-      - run:
-          name: run deploy batch
-          command: rsync -rlOtv --delete -e "ssh -p ${SSH_PORT:-22}" ~/repo/public/ ${USER_NAME}@${HOST_NAME}:${HOST_DEPLOY_PATH}
+          name: deploy by rsync
+          command: rsync -rlOtcv --delete --checksum -e ssh ./public/ $USER_NAME@$HOST_NAME:$HOST_DEPLOY_PATH
+orbs:
+  hugo: circleci/hugo@1.2.2
 workflows:
-  version: 2
-  test-deploy:
+  main:
     jobs:
+      - hugo/build:
+          html-proofer: false
       - deploy:
           filters:
             branches:
               only: master
+          requires:
+            - hugo/build

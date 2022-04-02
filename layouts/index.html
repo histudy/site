@@ -1,0 +1,22 @@
+{{ define "main" }}
+	<main class="main">
+		{{- if or .Title .Content }}
+		<div class="block mb1">
+      <div class="entry">
+			{{ with .Title }}<h1 class="page__title">{{ . }}</h1>{{ end }}
+			{{ with .Content }}<div class="page__content{{ if not $.Title }} page__content--notitle{{ end }}">{{ . }}</div>{{ end }}
+      </div>
+		</div>
+		{{- end }}
+
+   <h2 class="block">姫路IT系勉強会 開催履歴</h2>
+      {{ range (where .Pages "Section" "histudy") }}
+        {{ .Render "listforhome" }}
+      {{ end }}
+
+   <h2 class="block">加古川IT系インフラ勉強会  開催履歴</h2>
+    {{ range (where .Pages "Section" "kakogawa_infra") }}
+      {{ .Render "listforhome" }}
+    {{ end }}
+	</main>
+{{ end }}
