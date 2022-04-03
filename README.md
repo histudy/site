@@ -49,28 +49,33 @@ hugo serve
 hugo new foo.md
 ```
 
-`content/foo.md` ファイルが生成され、[http://localhost:1313/foo/]() に内容が表示されます。
+`content/foo.md` ファイルが生成され、[http://localhost:1313/foo/](http://localhost:1313/foo/) に内容が表示されます。
 
 ### 勉強会の開催履歴ページを作成する
 
 ```shell
 hugo new histudy/2021/07.md
 ```
+
 `archetype` フォルダの `histudy.md` をテンプレートとして、`content/histudy/2021/07.md` が生成されます。  
 加古川IT系インフラ勉強会も同様にテンプレートを用意しています。
 
 #### [HackMD](https://hackmd.io/)のページから開催履歴を生成
 
-例えば、姫路IT系勉強会 2021年7月の HackMD URL
+1. .md ファイルをダウンロード
+2. MD ファイルのパスを引数にシェルスクリプトを実行
+3. スクリプト内で hugo コマンドによりページを作成し、[フロントマター](https://gohugo.io/content-management/front-matter/)を書き換えます
 
-> https://hackmd.io/aVHxec9eRkakAkecJ4gyMg
-
-IDだけをシェルスクリプトの引数として渡して実行。
+例えば、姫路IT系勉強会 2021年7月の HackMD でのログ  
+`https://hackmd.io/aVHxec9eRkakAkecJ4gyMg` を、`2021-07.md` としてダウンロード
 
 ```
-sh add-meeting-log.sh aVHxec9eRkakAkecJ4gyMg
+sh add-meeting-log.sh 2021-07.md
 ```
 
+`content/histudy/2021/07.md` が生成されます。
+
+[hackmd-cli](https://github.com/hackmdio/hackmd-cli) v2 より、noteId の英数文字列だけでは MarkDown ファイルの取得ができなくなりました。
 
 
 ## コンテンツフォルダの構成
