@@ -12,17 +12,23 @@ menu:
   - identifier: categories
     name: 開催履歴
     url: /categories/meeting-log/
-    weight: -40
+    weight: -60
 
   - identifier: topic
     name: Topics
     url: /topic/
-    weight: -20
+    weight: -40
 
   - identifier: about
     name: About
     url: /about/
+    weight: -20
+
+  - identifier: search
+    name: Search
+    url: /search
     weight: 0
+
 
 Params:
   dateFormat: "2006-01-02"
