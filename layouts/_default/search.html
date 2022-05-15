@@ -1,0 +1,13 @@
+{{ define "main" }}
+	<main class="main">
+
+		<div class="page block">
+			{{ with .Title }}<h1 class="page__title">{{ . }}</h1>{{ end }}
+			{{ with .Content }}<div class="page__content{{ if not $.Title }} page__content--notitle{{ end }}">{{ . }}</div>{{ end }}
+
+      <script async src="https://cse.google.com/cse.js?cx=07f86b115db5035da"></script>
+      <div class="gcse-search"></div>
+
+		</div>
+	</main>
+{{ end }}
