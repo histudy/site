@@ -31,6 +31,24 @@ updated: 2022-07-09
 * [Discord](https://discord.gg/rZCeScB)
   * オンライン開催の場合はDiscordにて行います。
 
+### 姫路IT系勉強会で取り上げたい技術の範囲
+
+- Web周辺テクノロジー
+  - HTML5 / CSS3 / JavaScriptやjQueryなどのライブラリ
+  - Webデザイン
+  - CMS
+- プログラミング(PHPやRuby, Python. Shell Scriptなど)
+- サーバー / ネットワーク
+  - 仮想化
+  - 運用管理など
+- オープンソース / 自由ソフトウェア
+- モバイルデバイス Android, iOS, その他
+- ガジェット Raspberry Pi, Beagle bone black, Arduino
+- ワークフロー / タスクマネージメント
+- IT技術者のライフハック
+
+関連することその他などなど…
+
 ### こんな人はごめんなさい…
 
 「姫路IT系勉強会」という名前で勘違いされるのですが、この勉強会はユーザー向けではなく**IT技術に興味のある方を対象**にしています。
