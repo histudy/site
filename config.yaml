@@ -28,7 +28,10 @@ menu:
     name: Search
     url: /search
     weight: 0
-
+  - identifier: links
+    name: Links
+    url: /links
+    weight: 0
 
 Params:
   dateFormat: "2006-01-02"
