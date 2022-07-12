@@ -1,0 +1,6 @@
+---
+header-style:
+  style: setext_with_atx
+ul-indent:
+  indent: 4
+line-length: false

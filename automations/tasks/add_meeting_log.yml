@@ -1,0 +1,24 @@
+- name: 公開日を元にログファイルのパスを変数に設定
+  ansible.builtin.set_fact:
+    meeting_log_file: "../content/histudy/{{ '%Y/%m' | strftime(item.publishedAt / 1000) }}.md"
+- name: 開催ログファイルが存在しているか確認
+  ansible.builtin.stat:
+    path: "{{ meeting_log_file }}"
+  register: stat_result
+- name: 開催ログファイルを生成
+  block:
+    - name: ノートの内容をAPIから取得
+      ansible.builtin.uri:
+        url: "{{ hackmd_api_url }}notes/{{ item.id }}"
+        headers:
+          Authorization: "Bearer {{ hackmd_token }}"
+      register: api_result
+    - name: ログの内容を出力用変数に割り当て
+      ansible.builtin.set_fact:
+        meeting_log: "{{ api_result.json.content.split('\n')[6:] | join('\n') }}"
+    - name: 開催ログファイルを作成
+      ansible.builtin.template:
+        src: histudy_meeting_log.md.j2
+        dest: "{{ meeting_log_file }}"
+        mode: "0644"
+  when: not stat_result.stat.exists

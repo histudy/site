@@ -1,0 +1,20 @@
+{
+  "name": "Markdown Editing",
+  "dockerFile": "Dockerfile",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "yzhang.markdown-all-in-one",
+        "DavidAnson.vscode-markdownlint",
+        "shd101wyy.markdown-preview-enhanced",
+        "bierner.github-markdown-preview",
+        "mikestead.dotenv",
+        "redhat.ansible"
+      ]
+    }
+  },
+  "forwardPorts": [
+    1313
+  ],
+  "remoteUser": "vscode"
+}
