@@ -13,12 +13,12 @@
         headers:
           Authorization: "Bearer {{ hackmd_token }}"
       register: api_result
-    - name: ログの内容を出力用変数に割り当て
+    - name: ログの内容(6行目以降)を出力用変数に割り当て
       ansible.builtin.set_fact:
         meeting_log: "{{ api_result.json.content.split('\n')[6:] | join('\n') }}"
     - name: 開催ログファイルを作成
       ansible.builtin.template:
-        src: histudy_meeting_log.md.j2
+        src: histudy.md.j2
         dest: "{{ meeting_log_file }}"
         mode: "0644"
   when: not stat_result.stat.exists
