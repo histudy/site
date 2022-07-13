@@ -6,15 +6,19 @@ Himeji IT Study Meeting
 テスト方法
 ----------------
 
-### 1. サイトの生成に[Hugo](https://gohugo.io/)を利用しているのでインストールします
+### 1. [Hugo](https://gohugo.io/)をインストールします
 
-Linux: [リリースページ](https://github.com/gohugoio/hugo/releases)から最新のバイナリを `/usr/local/bin` に入れるのが簡単です。  
+サイトの生成に[Hugo](https://gohugo.io/)を利用しているのでインストールを行います
+
+### Linux
+
+[リリースページ](https://github.com/gohugoio/hugo/releases)から最新のバイナリを `/usr/local/bin` に入れるのが簡単です。  
 
 #### Mac
 
 Home Brewが使えます
 
-```shell
+```sh
 brew install hugo
 ```
 
@@ -22,19 +26,19 @@ brew install hugo
 
 [Chocolatey](https://chocolatey.org/)が使えます
 
-```
+```sh
 choco install hugo -confirm
 ```
 
 ### 2. このリポジトリをクローンします
 
-```shell
+```sh
 git clone https://github.com/histudy/site
 ```
 
 ### 3. HugoのWEBサーバーを起動します
 
-```shell
+```sh
 hugo serve
 ```
 
@@ -47,7 +51,7 @@ hugo serve
 
 ### Hugoサーバーを起動する
 
-```shell
+```sh
 hugo serve
 ```
 
@@ -55,7 +59,7 @@ hugo serve
 
 ### ページを作成する
 
-```shell
+```sh
 hugo new foo.md
 ```
 
@@ -63,7 +67,7 @@ hugo new foo.md
 
 ### 勉強会の開催履歴ページを作成する
 
-```shell
+```sh
 hugo new histudy/2021/07.md
 ```
 
@@ -79,7 +83,7 @@ hugo new histudy/2021/07.md
 例えば、姫路IT系勉強会 2021年7月の HackMD でのログ  
 `https://hackmd.io/aVHxec9eRkakAkecJ4gyMg` を、`2021-07.md` としてダウンロード
 
-```
+```sh
 sh add-meeting-log.sh 2021-07.md
 ```
 
@@ -90,7 +94,7 @@ sh add-meeting-log.sh 2021-07.md
 コンテンツフォルダの構成
 --------------------------
 
-```shell
+```txt
 content
 ├── _index.md  // トップページ https://histudy.jp/
 ├── about
