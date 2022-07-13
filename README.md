@@ -1,39 +1,49 @@
-# Himeji IT Study Meeting
+Himeji IT Study Meeting
+===========================
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) [![CircleCI](https://circleci.com/gh/histudy/site.svg?style=svg)](https://circleci.com/gh/histudy/site)
 
-## テスト方法
+テスト方法
+----------------
 
-1. サイトの生成に[Hugo](https://gohugo.io/)を利用しているのでインストールします。
+### 1. サイトの生成に[Hugo](https://gohugo.io/)を利用しているのでインストールします
 
-    Linux: [リリースページ](https://github.com/gohugoio/hugo/releases)から最新のバイナリを `/usr/local/bin` に入れるのが簡単です。  
-    
-    Mac: Home Brewが使えます。
-    ```shell
-    brew install hugo
-    ```
-    
-    Windows: [Chocolatey](https://chocolatey.org/)が使えます。
-    ``` 
-    choco install hugo -confirm
-    ```
+Linux: [リリースページ](https://github.com/gohugoio/hugo/releases)から最新のバイナリを `/usr/local/bin` に入れるのが簡単です。  
 
+#### Mac
 
-2. このリポジトリをクローンします。
+Home Brewが使えます
 
-    ```shell
-    git clone https://github.com/histudy/site
-    ```
+```shell
+brew install hugo
+```
 
-3. HugoのWEBサーバーを起動します。
+#### Windows
 
-    ```shell
-    hugo serve
-    ```
+[Chocolatey](https://chocolatey.org/)が使えます
 
-4. ブラウザで [http://localhost:1313/](http://localhost:1313/) にアクセスするとサイトが表示されます。
+```
+choco install hugo -confirm
+```
 
-## 各種コマンド
+### 2. このリポジトリをクローンします
+
+```shell
+git clone https://github.com/histudy/site
+```
+
+### 3. HugoのWEBサーバーを起動します
+
+```shell
+hugo serve
+```
+
+### 4. ブラウザで確認します
+
+[http://localhost:1313/](http://localhost:1313/) にアクセスするしサイトの表示内容を確認します。
+
+各種コマンド
+--------------------------
 
 ### Hugoサーバーを起動する
 
@@ -77,8 +87,8 @@ sh add-meeting-log.sh 2021-07.md
 
 [hackmd-cli](https://github.com/hackmdio/hackmd-cli) v2 より、noteId の英数文字列だけでは MarkDown ファイルの取得ができなくなりました。
 
-
-## コンテンツフォルダの構成
+コンテンツフォルダの構成
+--------------------------
 
 ```shell
 content
