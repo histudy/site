@@ -1,0 +1,30 @@
+{
+  "name": "Markdown Editing",
+  "dockerFile": "Dockerfile",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "files.associations": {
+          "*.j2": "twig",
+          ".envrc": "dotenv",
+          "automations/**/*.yml": "ansible"
+        }
+      },
+      "extensions": [
+        "EditorConfig.EditorConfig",
+        "yzhang.markdown-all-in-one",
+        "DavidAnson.vscode-markdownlint",
+        "shd101wyy.markdown-preview-enhanced",
+        "bierner.github-markdown-preview",
+        "mikestead.dotenv",
+        "redhat.ansible",
+        "whatwedo.twig"
+      ]
+    }
+  },
+  "forwardPorts": [
+    1313
+  ],
+  "postStartCommand": "direnv allow",
+  "remoteUser": "vscode"
+}

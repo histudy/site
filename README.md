@@ -1,43 +1,57 @@
-# Himeji IT Study Meeting
+Himeji IT Study Meeting
+===========================
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) [![CircleCI](https://circleci.com/gh/histudy/site.svg?style=svg)](https://circleci.com/gh/histudy/site)
 
-## テスト方法
+テスト方法
+----------------
 
-1. サイトの生成に[Hugo](https://gohugo.io/)を利用しているのでインストールします。
+### 1. [Hugo](https://gohugo.io/)をインストールします
 
-    Linux: [リリースページ](https://github.com/gohugoio/hugo/releases)から最新のバイナリを `/usr/local/bin` に入れるのが簡単です。  
-    
-    Mac: Home Brewが使えます。
-    ```shell
-    brew install hugo
-    ```
-    
-    Windows: [Chocolatey](https://chocolatey.org/)が使えます。
-    ``` 
-    choco install hugo -confirm
-    ```
+サイトの生成に[Hugo](https://gohugo.io/)を利用しているのでインストールを行います
 
+### Linux
 
-2. このリポジトリをクローンします。
+[リリースページ](https://github.com/gohugoio/hugo/releases)から最新のバイナリを `/usr/local/bin` に入れるのが簡単です。  
 
-    ```shell
-    git clone https://github.com/histudy/site
-    ```
+#### Mac
 
-3. HugoのWEBサーバーを起動します。
+Home Brewが使えます
 
-    ```shell
-    hugo serve
-    ```
+```sh
+brew install hugo
+```
 
-4. ブラウザで [http://localhost:1313/](http://localhost:1313/) にアクセスするとサイトが表示されます。
+#### Windows
 
-## 各種コマンド
+[Chocolatey](https://chocolatey.org/)が使えます
+
+```sh
+choco install hugo -confirm
+```
+
+### 2. このリポジトリをクローンします
+
+```sh
+git clone https://github.com/histudy/site
+```
+
+### 3. HugoのWEBサーバーを起動します
+
+```sh
+hugo serve
+```
+
+### 4. ブラウザで確認します
+
+[http://localhost:1313/](http://localhost:1313/) にアクセスするしサイトの表示内容を確認します。
+
+各種コマンド
+--------------------------
 
 ### Hugoサーバーを起動する
 
-```shell
+```sh
 hugo serve
 ```
 
@@ -45,7 +59,7 @@ hugo serve
 
 ### ページを作成する
 
-```shell
+```sh
 hugo new foo.md
 ```
 
@@ -53,7 +67,7 @@ hugo new foo.md
 
 ### 勉強会の開催履歴ページを作成する
 
-```shell
+```sh
 hugo new histudy/2021/07.md
 ```
 
@@ -69,7 +83,7 @@ hugo new histudy/2021/07.md
 例えば、姫路IT系勉強会 2021年7月の HackMD でのログ  
 `https://hackmd.io/aVHxec9eRkakAkecJ4gyMg` を、`2021-07.md` としてダウンロード
 
-```
+```sh
 sh add-meeting-log.sh 2021-07.md
 ```
 
@@ -77,10 +91,10 @@ sh add-meeting-log.sh 2021-07.md
 
 [hackmd-cli](https://github.com/hackmdio/hackmd-cli) v2 より、noteId の英数文字列だけでは MarkDown ファイルの取得ができなくなりました。
 
+コンテンツフォルダの構成
+--------------------------
 
-## コンテンツフォルダの構成
-
-```shell
+```txt
 content
 ├── _index.md  // トップページ https://histudy.jp/
 ├── about

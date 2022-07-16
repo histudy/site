@@ -1,0 +1,38 @@
+- name: タイトルから開催年月を抽出
+  ansible.builtin.set_fact:
+    meeting_year: "{{ item.title | regex_search('[0-9]{4}') }}"
+    meeting_month: "{{ item.title | regex_search('.[0-9]{2}$') | replace('.', '') }}"
+- name: 開催年月が指定されている場合
+  block:
+    - name: 開催年月からログディレクトリとログファイルのパスを設定
+      ansible.builtin.set_fact:
+        meeting_log_dir: "../content/histudy/{{ meeting_year }}"
+        meeting_log_file: "../content/histudy/{{ meeting_year }}/{{ meeting_month }}.md"
+    - name: ログディレクトリを作成
+      ansible.builtin.file:
+        path: "{{ meeting_log_dir }}"
+        state: directory
+    - name: 開催ログファイルが存在しているか確認
+      ansible.builtin.stat:
+        path: "{{ meeting_log_file }}"
+      register: stat_result
+    - name: 開催ログファイルを生成
+      block:
+        - name: ノートの内容をAPIから取得
+          ansible.builtin.uri:
+            url: "{{ hackmd_api_url }}notes/{{ item.id }}"
+            headers:
+              Authorization: "Bearer {{ hackmd_token }}"
+          register: api_result
+        - name: ログの内容(6行目以降)を出力用変数に割り当て
+          ansible.builtin.set_fact:
+            meeting_log: "{{ api_result.json.content.split('\n')[6:] | join('\n') }}"
+        - name: 開催ログファイルを作成
+          ansible.builtin.template:
+            src: histudy.md.j2
+            dest: "{{ meeting_log_file }}"
+            mode: "0644"
+      when: not stat_result.stat.exists
+  when:
+    - meeting_year is not none
+    - meeting_month is not none
