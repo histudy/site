@@ -3,94 +3,6 @@ Himeji IT Study Meeting
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/) [![CircleCI](https://circleci.com/gh/histudy/site.svg?style=svg)](https://circleci.com/gh/histudy/site)
 
-テスト方法
-----------------
-
-### 1. [Hugo](https://gohugo.io/)をインストールします
-
-サイトの生成に[Hugo](https://gohugo.io/)を利用しているのでインストールを行います
-
-### Linux
-
-[リリースページ](https://github.com/gohugoio/hugo/releases)から最新のバイナリを `/usr/local/bin` に入れるのが簡単です。  
-
-#### Mac
-
-Home Brewが使えます
-
-```sh
-brew install hugo
-```
-
-#### Windows
-
-[Chocolatey](https://chocolatey.org/)が使えます
-
-```sh
-choco install hugo -confirm
-```
-
-### 2. このリポジトリをクローンします
-
-```sh
-git clone https://github.com/histudy/site
-```
-
-### 3. HugoのWEBサーバーを起動します
-
-```sh
-hugo serve
-```
-
-### 4. ブラウザで確認します
-
-[http://localhost:1313/](http://localhost:1313/) にアクセスするしサイトの表示内容を確認します。
-
-各種コマンド
---------------------------
-
-### Hugoサーバーを起動する
-
-```sh
-hugo serve
-```
-
-ブラウザで [http://localhost:1313/](http://localhost:1313/) にアクセスするとサイトが表示されます。
-
-### ページを作成する
-
-```sh
-hugo new foo.md
-```
-
-`content/foo.md` ファイルが生成され、[http://localhost:1313/foo/](http://localhost:1313/foo/) に内容が表示されます。
-
-### 勉強会の開催履歴ページを作成する
-
-```sh
-hugo new histudy/2021/07.md
-```
-
-`archetype` フォルダの `histudy.md` をテンプレートとして、`content/histudy/2021/07.md` が生成されます。  
-加古川IT系インフラ勉強会も同様にテンプレートを用意しています。
-
-#### [HackMD](https://hackmd.io/)のページから開催履歴を生成
-
-1. .md ファイルをダウンロード
-2. MD ファイルのパスを引数にシェルスクリプトを実行
-3. スクリプト内で hugo コマンドによりページを作成し、[フロントマター](https://gohugo.io/content-management/front-matter/)を書き換えます
-
-例えば、姫路IT系勉強会 2021年7月の HackMD でのログ  
-`https://hackmd.io/aVHxec9eRkakAkecJ4gyMg` を、`2021-07.md` としてダウンロード
-
-```sh
-sh add-meeting-log.sh 2021-07.md
-```
-
-`content/histudy/2021/07.md` が生成されます。
-
-[hackmd-cli](https://github.com/hackmdio/hackmd-cli) v2 より、noteId の英数文字列だけでは MarkDown ファイルの取得ができなくなりました。
-
 コンテンツフォルダの構成
 --------------------------
 
@@ -125,3 +37,10 @@ content
     ├── 20181203_redmine_advent_calendar.md   // トピック個別ページ
     └── 20181206_ansible_redmine_role.md
 ```
+
+開催ログの追加方法
+-------------
+
+Redmineの以下のWikiを参照してください。
+
+[開催ログの追加方法](https://redmine.histudy.jp/projects/official-site/wiki/%E9%96%8B%E5%82%AC%E3%83%AD%E3%82%B0%E3%81%AE%E8%BF%BD%E5%8A%A0%E6%96%B9%E6%B3%95)

@@ -8,6 +8,9 @@
           "*.j2": "twig",
           ".envrc": "dotenv",
           "automations/**/*.yml": "ansible"
+        },
+        "[markdown]": {
+          "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
         }
       },
       "extensions": [
