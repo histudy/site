@@ -33,6 +33,11 @@ menu:
     url: /links
     weight: 0
 
+taxonomies:
+  category: categories
+  tags: tags
+  guids: guide
+
 Params:
   dateFormat: "2006-01-02"
   Entry:
@@ -44,3 +49,4 @@ Params:
   customCSS:
     - "css/custom.css"
   mainMenuAlignment: "right"
+

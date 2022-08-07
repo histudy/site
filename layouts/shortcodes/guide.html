@@ -1,0 +1,7 @@
+<div class="cards">
+  {{ range .Site.Taxonomies.guide.participation}}
+    <div class="card card--2col">
+      {{ .Render "summary" }}
+    </div>
+  {{ end }}
+</div>
