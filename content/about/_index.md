@@ -11,45 +11,44 @@ updated: 2022-07-09
 ### コミュニティ
 
 * [connpass](https://histudy.connpass.com/)
-  * 勉強会の告知や勉強会への参加登録を受け付けています。
+    * 勉強会の告知や勉強会への参加登録を受け付けています。
 * [Slack](https://histudy.slack.com/)
-  * 勉強会開催日以外での参加者同士のコミュニケーション手段として利用しています。
+    * 勉強会開催日以外での参加者同士のコミュニケーション手段として利用しています。
 * [Discord](https://discord.gg/rZCeScB)
-  * オンライン開催の場合はDiscordにて行います。
+    * オンライン開催の場合はDiscordにて行います。
 
 ### 会場案内
 
 {{< guide >}}
 
-
 ### 取り上げたい技術の範囲
 
 姫路IT系勉強会は「IT系」というくくりはありますが、ジャンルに特化していません。
 
-- Web周辺テクノロジー
-  - HTML5 / CSS3 / JavaScript / TypeScript
-  - フレームワーク
-    - React など
-  - CMS
-  - Webデザイン
-- プログラミング
-  - PHPやRuby, Python など各種プログラミング言語
-  - Git
-  - アルゴリズム
-- サーバー / ネットワーク
-  - 仮想化
-  - 運用管理など
-- オープンソース / 自由ソフトウェア
-- データベース
-- プロジェクト・マネジメント
-  - ワークフロー
-  - タスクマネージメント
-  - Redmine, Jira など管理ツール
-- モバイルデバイス
-  - Android, iOS, その他
-- ガジェット
-  - Raspberry Pi, Beagle bone black, Arduino
-- IT技術者のライフハック
+* Web周辺テクノロジー
+    * HTML5 / CSS3 / JavaScript / TypeScript
+    * フレームワーク
+        * React など
+    * CMS
+    * Webデザイン
+* プログラミング
+    * PHPやRuby, Python など各種プログラミング言語
+    * Git
+    * アルゴリズム
+* サーバー / ネットワーク
+    * 仮想化
+    * 運用管理など
+* オープンソース / 自由ソフトウェア
+* データベース
+* プロジェクト・マネジメント
+    * ワークフロー
+    * タスクマネージメント
+    * Redmine, Jira など管理ツール
+* モバイルデバイス
+    * Android, iOS, その他
+* ガジェット
+    * Raspberry Pi, Beagle bone black, Arduino
+* IT技術者のライフハック
 
 関連することその他などなど…
 
@@ -58,3 +57,11 @@ updated: 2022-07-09
 「姫路IT系勉強会」という名前で勘違いされるのですが、この勉強会はユーザー向けではなく**IT技術に興味のある方を対象**にしています。
 
 ですので、スマホやタブレット、Word/Excelの使い方をお探しの方は別のコミュニティをお探し下さい。
+
+
+連絡先
+---------------------------
+
+以下のリンクよりSlackに登録いただき、`#姫路IT系勉強会`チャンネルで発言していただければ運営者の誰かが反応します。
+
+[姫路IT系勉強会 Slackへ参加する](https://join.slack.com/t/histudy/shared_invite/zt-ugowinom-ZG0ORhstkrqQGVyjksr_OA)
