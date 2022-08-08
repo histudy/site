@@ -1,0 +1,26 @@
+- name: 勉強会のログを更新
+  hosts: 127.0.0.1,
+  become: false
+  gather_facts: false
+  connection: local
+  vars:
+    hackmd_api_url: https://api.hackmd.io/v1/
+    hackmd_team: histudy
+    hackmd_token: "{{ lookup('env', 'HACKMD_TOKEN') }}"
+  tasks:
+    - block:
+        - name: チームノートの一覧を取得
+          ansible.builtin.uri:
+            url: "{{ hackmd_api_url }}teams/{{ hackmd_team }}/notes"
+            headers:
+              Authorization: "Bearer {{ hackmd_token }}"
+          register: api_result
+        - name: 取得結果を変数に割り当て
+          ansible.builtin.set_fact:
+            hackmd_all_notes: "{{ api_result.json | selectattr('title', 'contains', '姫路IT勉強会') }}"
+        - name: 存在しない開催ログファイルを生成
+          ansible.builtin.include_tasks: "tasks/add_meeting_log.yml"
+          loop: "{{ hackmd_all_notes }}"
+          loop_control:
+            label: "{{ item.title }}"
+      when: hackmd_token | length > 0

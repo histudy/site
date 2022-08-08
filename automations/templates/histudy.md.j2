@@ -1,0 +1,10 @@
+---
+title: 姫路IT系勉強会 {{ meeting_year }}.{{ meeting_month }}
+date: {{ meeting_log | regex_search('開催日: [0-9]{4}/[0-9]{2}/[0-9]{2}') | replace('開催日: ', '') | replace('/', '-') }}
+categories:
+  - 開催履歴
+  - meeting-log
+tags:
+  - 姫路IT系勉強会
+---
+{{- meeting_log }}
