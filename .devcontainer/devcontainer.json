@@ -29,5 +29,6 @@
     1313
   ],
   "postStartCommand": "direnv allow",
+  "shutdownAction": "stopContainer",
   "remoteUser": "vscode"
 }
