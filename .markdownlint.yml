@@ -130,7 +130,7 @@ no-duplicate-header: false
 #   # Allowed elements
 #   allowed_elements: []
 ## MD034/no-bare-urls - Bare URL used
-# no-bare-urls: true
+no-bare-urls: false
 ## MD035 - Horizontal rule style
 # hr-style:
 #   # Horizontal rule style
