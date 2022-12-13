@@ -28,7 +28,7 @@
   "forwardPorts": [
     1313
   ],
-  "postStartCommand": "direnv allow",
+  "postStartCommand": "direnv allow && pre-commit install",
   "shutdownAction": "stopContainer",
   "remoteUser": "vscode"
 }
