@@ -1,0 +1,22 @@
+---
+## @see https://github.com/textlint-rule/textlint-rule-prh
+version: 1
+rules:
+  ## ------------------
+  # 表記揺れ
+  ## ------------------
+  - expected: Markdown
+  - expected: jQuery
+  - expected: jQuery UI
+  - expected: PHP
+  - expected: Node.js
+  - expected: Python
+  - expected: Ruby
+  - expected: JavaScript
+  - expected: TypeScript
+  - expected: Rust
+  - expected: Go
+  - patterns: Golang
+    expected: Go
+  - patterns: node
+    expected: Node.js
