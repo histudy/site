@@ -3,20 +3,64 @@
 version: 1
 rules:
   ## ------------------
-  # 表記揺れ
+  ## 表記揺れ
   ## ------------------
-  - expected: Markdown
-  - expected: jQuery
-  - expected: jQuery UI
+  ### 長音
+  - expected: ベンダー
+    pattern: /ベンダ(?!ー)/
+  - expected: サーバー
+    pattern: /サーバ(?!ー)/
+  - expected: カテゴリー
+    pattern: /カテゴリ(?!ー)/
+  ### OS
+  - expected: Linux
+  - expected: Windows
+  - expected: Mac
+    options:
+      wordBoundary: true
+  ### Language
   - expected: PHP
   - expected: Node.js
+  - patterns: node
+    expected: Node.js
   - expected: Python
   - expected: Ruby
   - expected: JavaScript
   - expected: TypeScript
   - expected: Rust
   - expected: Go
-  - patterns: Golang
-    expected: Go
-  - patterns: node
-    expected: Node.js
+    patterns: /Go(?!lang)/i
+  ### Format
+  - expected: Markdown
+  - expected: Textile
+  - expected: reStructuredText
+  - expected: AsciiDoc
+  ### Framework name / Library name
+  - expected: jQuery
+  - expected: jQuery UI
+  - expected: Laravel
+  - expected: CakePHP
+  - expected: Symfony
+    patterns:
+      - /Sym(p|f)ony/i
+  - expected: Rails
+  - expected: Django
+  - expected: Flask
+  ### Tool name
+  - expected: Ansible
+  - expected: Terraform
+  - expected: Packer
+  ### Service name / Application name
+  - expected: WordPress
+  - expected: Redmine
+  - expected: Backlog
+  - expected: Jira
+  - expected: Confluence
+  ## Browser
+  - expected: Firefox
+  - expected: Chrome
+  - expected: Edge
+  ## Editor
+  - expected: VSCode
+  - expected: Vim
+  - expected: Emacs
