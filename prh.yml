@@ -18,6 +18,8 @@ rules:
   - expected: Mac
     options:
       wordBoundary: true
+  - expected: Android
+  - expected: iOS
   ### Language
   - expected: PHP
   - expected: Node.js
