@@ -58,6 +58,7 @@ rules:
   - expected: Backlog
   - expected: Jira
   - expected: Confluence
+  - expected: Mackerel
   ## Browser
   - expected: Firefox
   - expected: Chrome
