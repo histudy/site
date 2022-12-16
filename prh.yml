@@ -25,8 +25,9 @@ rules:
   ### Language
   - expected: PHP
   - expected: Node.js
-  - patterns: node
-    expected: Node.js
+    patterns:
+      - /node/i
+      - /node\.js/i
   - expected: Python
   - expected: Ruby
   - expected: JavaScript
