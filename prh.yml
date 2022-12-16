@@ -20,6 +20,8 @@ rules:
       wordBoundary: true
   - expected: Android
   - expected: iOS
+    options:
+      wordBoundary: true
   ### Language
   - expected: PHP
   - expected: Node.js

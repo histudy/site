@@ -6,3 +6,7 @@ rules:
   prh:
     rulePaths:
       - prh.yml
+    checkHeader: true
+    checkLink: false
+    checkEmphasis: true
+    checkBlockQuote: false
