@@ -28,7 +28,7 @@
   "forwardPorts": [
     1313
   ],
-  "postStartCommand": "direnv allow && pre-commit install",
+  "postStartCommand": "direnv allow && pre-commit install && hugo server",
   "shutdownAction": "stopContainer",
   "remoteUser": "vscode"
 }
