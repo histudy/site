@@ -1,6 +1,9 @@
 {
   "name": "Markdown Editing",
   "dockerFile": "Dockerfile",
+  "remoteEnv": {
+    "TZ": "Asia/Tokyo"
+  },
   "customizations": {
     "vscode": {
       "settings": {
