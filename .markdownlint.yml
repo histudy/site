@@ -86,11 +86,9 @@ line-length: false
 # MD023 - Headings must start at the beginning of the line
 # header-start-left: true
 # MD024 - Multiple headings with the same content
-no-duplicate-header: false
-#   # Only check sibling headings
-#   allow_different_nesting: false
-#   # Only check sibling headings
-#   siblings_only: false
+no-duplicate-header:
+  # Only check sibling headings
+  siblings_only: true
 ## MD025 - Multiple top-level headings in the same document
 # single-title:
 #   # Heading level
