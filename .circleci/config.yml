@@ -32,7 +32,7 @@ jobs:
           command: sudo apt update && sudo apt install -y rsync
       - run:
           name: deploy by rsync
-          command: rsync -rlOtcv --delete --checksum -e ssh ./public/ $USER_NAME@$HOST_NAME:$HOST_DEPLOY_PATH
+          command: rsync -ahvz --delete -e ssh ./public/ $USER_NAME@$HOST_NAME:$HOST_DEPLOY_PATH
 orbs:
   hugo: circleci/hugo@1.2.2
 workflows:
