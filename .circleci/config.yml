@@ -32,7 +32,7 @@ jobs:
           command: sudo apt update && sudo apt install -y rsync
       - run:
           name: deploy by rsync
-          command: rsync -ahvz --delete -e ssh ./public/
+          command: rsync -ahvz --delete -e "ssh -oHostKeyAlgorithms=+ssh-rsa" ./public/
             $USER_NAME@$HOST_NAME:$HOST_DEPLOY_PATH
     # The resource_class feature allows configuring CPU and RAM resources for each job. Different resource classes are available for different executors. https://circleci.com/docs/2.0/configuration-reference/#resourceclass
     resource_class: large
