@@ -20,7 +20,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-            at: .
+          at: .
       - add_ssh_keys:
           fingerprints:
             - "3a:48:3b:f5:ec:fb:8d:7a:4c:62:b9:19:01:e7:b1:58"
@@ -32,7 +32,10 @@ jobs:
           command: sudo apt update && sudo apt install -y rsync
       - run:
           name: deploy by rsync
-          command: rsync -ahvz --delete -e ssh ./public/ $USER_NAME@$HOST_NAME:$HOST_DEPLOY_PATH
+          command: rsync -ahvz --delete -e ssh ./public/
+            $USER_NAME@$HOST_NAME:$HOST_DEPLOY_PATH
+    # The resource_class feature allows configuring CPU and RAM resources for each job. Different resource classes are available for different executors. https://circleci.com/docs/2.0/configuration-reference/#resourceclass
+    resource_class: large
 orbs:
   hugo: circleci/hugo@1.2.2
 workflows:
