@@ -24,8 +24,6 @@ jobs:
           chmod 0600 ~/.ssh/id_rsa
       - name: Add known host
         run: ssh-keyscan ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
-      - name: test
+      - name: Deploy
         run: |
-          pwd
-          ls -la
-          ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} date
+          rsync -avzr --delete -e ssh ./public/ {{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}
