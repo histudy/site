@@ -23,7 +23,7 @@ jobs:
             at: .
       - add_ssh_keys:
           fingerprints:
-            - "31:33:d6:f0:98:e8:c0:39:1f:e3:a1:19:f7:dd:fb:c6"
+            - "3a:48:3b:f5:ec:fb:8d:7a:4c:62:b9:19:01:e7:b1:58"
       - run:
           name: Add known host
           command: ssh-keyscan $HOST_NAME >> ~/.ssh/known_hosts
