@@ -26,5 +26,4 @@ jobs:
         run: ssh-keyscan ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
       - name: Deploy
         run: |
-          ls -la ./public/
-          # rsync -ahvz --delete -e ssh ./public/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}
+          rsync -ahvz --delete -e ssh ./public/ ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_PATH }}
