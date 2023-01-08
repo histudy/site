@@ -26,6 +26,6 @@ jobs:
         run: ssh-keyscan ${{ secrets.DEPLOY_HOST }} >> ~/.ssh/known_hosts
       - name: test
         run: |
-          ssh -T ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}
           pwd
           ls -la
+          ssh ${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }} date
