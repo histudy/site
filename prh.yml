@@ -25,9 +25,10 @@ rules:
   ### Language
   - expected: PHP
   - expected: Node.js
-    patterns:
-      - /node/i
-      - /node\.js/i
+  - expected: Node.js
+    pattern: node
+    options:
+      wordBoundary: true
   - expected: Python
   - expected: Ruby
   - expected: JavaScript
