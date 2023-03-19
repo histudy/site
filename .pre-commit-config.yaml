@@ -26,6 +26,7 @@ repos:
         args: [--fix]
         additional_dependencies:
           - textlint
+          - textlint-filter-rule-comments
           - textlint-rule-preset-ja-technical-writing
           - textlint-rule-preset-ja-spacing
           - textlint-rule-prh

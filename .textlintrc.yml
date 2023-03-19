@@ -1,5 +1,6 @@
 ---
-filters: {}
+filters:
+  comments: true
 rules:
   preset-ja-technical-writing: true
   preset-ja-spacing: true
