@@ -43,6 +43,8 @@ rules:
     patterns: /Go(?!lang)/i
   ### Format
   - expected: Markdown
+    options:
+      wordBoundary: true
   - expected: Textile
   - expected: reStructuredText
   - expected: AsciiDoc
