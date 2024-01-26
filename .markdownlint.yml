@@ -4,13 +4,13 @@ default: true
 ## Path to configuration file to extend
 extends: null
 ### ------------------
-## MD001 - Heading levels should only increment by one level at a time
-# header-increment: true
+## MD001 - heading levels should only increment by one level at a time
+# heading-increment: true
 ## MD002 - First heading should be a top-level heading
-# first-header-h1:
+# first-heading-h1:
 #   level: 1
-## MD003 - Heading style
-header-style:
+## MD003 - heading style
+heading-style:
   style: setext_with_atx
 ## MD004 - Unordered list style
 # ul-style:
@@ -62,7 +62,7 @@ line-length: false
 #   # Include tables
 #   tables: true
 #   # Include headings
-#   headers: true
+#   headings: true
 #   # Strict length checking
 #   strict: false
 #   # Stern length checking
@@ -77,21 +77,21 @@ line-length: false
 # no-missing-space-closed-atx: true
 ## MD021 - Multiple spaces inside hashes on closed atx style heading
 # no-multiple-space-closed-atx: true
-## MD022 - Headings should be surrounded by blank lines
-# blanks-around-headers:
+## MD022 - headings should be surrounded by blank lines
+# blanks-around-headings:
 #   # Blank lines above heading
 #   lines_above: 1
 #   # Blank lines below heading
 #   lines_below: 1
-# MD023 - Headings must start at the beginning of the line
-# header-start-left: true
+# MD023 - headings must start at the beginning of the line
+# heading-start-left: true
 # MD024 - Multiple headings with the same content
-no-duplicate-header:
+no-duplicate-heading:
   # Only check sibling headings
   siblings_only: true
 ## MD025 - Multiple top-level headings in the same document
 # single-title:
-#   # Heading level
+#   # heading level
 #   level: 1
 #   # RegExp for matching title in front matter
 #   front_matter_title: "^\\s*title\\s*[:=]"
@@ -134,7 +134,7 @@ no-bare-urls: false
 #   # Horizontal rule style
 #   style: "consistent"
 ## MD036 - Emphasis used instead of a heading
-no-emphasis-as-header: false
+no-emphasis-as-heading: false
 #   # Punctuation characters
 #   punctuation: ".,;:!?。，；：！？"
 ## MD037 - Spaces inside emphasis markers
@@ -147,16 +147,16 @@ no-emphasis-as-header: false
 fenced-code-language: false
 ## MD041 - First line in a file should be a top-level heading
 # first-line-heading:
-#   # Heading level
+#   # heading level
 #   level: 1
 #   # RegExp for matching title in front matter
 #   front_matter_title: "^\\s*title\\s*[:=]"
 ## MD042 - No empty links
 # no-empty-links: true
 ## MD043 - Required heading structure
-# required-headers:
+# required-headings:
 #   # List of headings
-#   headers: []
+#   headings: []
 ## MD044 - Proper names should have the correct capitalization
 # proper-names:
 #   # List of proper names

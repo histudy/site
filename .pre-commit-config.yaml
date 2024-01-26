@@ -4,7 +4,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       - id: check-json
       - id: check-yaml
@@ -16,7 +16,7 @@ repos:
         args:
           - --markdown-linebreak-ext=md
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.35.0
+    rev: v0.38.0
     hooks:
       - id: markdownlint-fix
   - repo: https://github.com/RyoWakabayashi/pre-commit-mirrors-textlint
