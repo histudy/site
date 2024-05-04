@@ -4,7 +4,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v4.6.0
     hooks:
       - id: check-json
       - id: check-yaml
@@ -16,16 +16,20 @@ repos:
         args:
           - --markdown-linebreak-ext=md
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.38.0
+    rev: v0.40.0
     hooks:
       - id: markdownlint-fix
-  - repo: https://github.com/RyoWakabayashi/pre-commit-mirrors-textlint
-    rev: v12.2.1
+  - repo: https://github.com/wate/pre-commit-mirrors-textlint
+    rev: v14.0.4-1
     hooks:
-      - id: textlint
-        args: [--fix]
+      - id: textlint-fix
         additional_dependencies:
-          - textlint
+          - textlint-filter-rule-comments
+          - textlint-rule-preset-ja-technical-writing
+          - textlint-rule-preset-ja-spacing
+          - textlint-rule-prh
+      - id: textlint
+        additional_dependencies:
           - textlint-filter-rule-comments
           - textlint-rule-preset-ja-technical-writing
           - textlint-rule-preset-ja-spacing

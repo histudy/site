@@ -26,7 +26,7 @@
           register: api_result
         - name: ログの内容(6行目以降)を出力用変数に割り当て
           ansible.builtin.set_fact:
-            meeting_log: "{{ api_result.json.content.split('\n')[6:] | join('\n') }}"
+            meeting_log: "{{ api_result.json.content.split('\n')[2:] | join('\n') }}"
         - name: 開催ログファイルを作成
           ansible.builtin.template:
             src: histudy.md.j2
