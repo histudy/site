@@ -1,0 +1,80 @@
+---
+## @see https://github.com/textlint-rule/textlint-rule-prh
+version: 1
+rules:
+  ## ------------------
+  ## 表記揺れ
+  ## ------------------
+  ### 略語
+  - expected: スプレッドシート
+    pattern: スプシ
+  - expected: パワーポイント
+    pattern: パワポ
+  ### 長音
+  - expected: ベンダー
+    pattern: /ベンダ(?!ー)/
+  - expected: サーバー
+    pattern: /サーバ(?!ー)/
+  - expected: カテゴリー
+    pattern: /カテゴリ(?!ー)/
+  ### OS
+  - expected: Linux
+  - expected: Windows
+  - expected: Mac
+    options:
+      wordBoundary: true
+  - expected: Android
+  - expected: iOS
+    options:
+      wordBoundary: true
+  ### Language
+  - expected: PHP
+  - expected: Node.js
+  - expected: Node.js
+    pattern: node
+    options:
+      wordBoundary: true
+  - expected: Python
+  - expected: Ruby
+  - expected: JavaScript
+  - expected: TypeScript
+  - expected: Rust
+  - expected: Go
+    patterns: /Go(?!lang)/i
+  ### Format
+  - expected: Markdown
+    options:
+      wordBoundary: true
+  - expected: Textile
+  - expected: reStructuredText
+  - expected: AsciiDoc
+  ### Framework name / Library name
+  - expected: jQuery
+  - expected: jQuery UI
+  - expected: Laravel
+  - expected: CakePHP
+  - expected: Symfony
+    patterns:
+      - /Sym(p|f)ony/i
+  - expected: Rails
+  - expected: Django
+  - expected: Flask
+  ### Tool name
+  - expected: Ansible
+  - expected: Terraform
+  - expected: Packer
+  ### Service name / Application name
+  - expected: WordPress
+  - expected: Redmine
+  - expected: Backlog
+  - expected: Jira
+  - expected: Confluence
+  - expected: Mackerel
+  ## Browser
+  - expected: Firefox
+  - expected: Chrome
+  - expected: Edge
+  ## Editor
+  - expected: VSCode
+  - expected: Vim
+  - expected: Emacs

@@ -1,0 +1,17 @@
+---
+filters:
+  comments: true
+rules:
+  preset-ja-technical-writing:
+    no-exclamation-question-mark: false
+    no-doubled-joshi:
+      allow:
+        - が
+  preset-ja-spacing: true
+  prh:
+    rulePaths:
+      - prh.yml
+    checkHeader: true
+    checkLink: false
+    checkEmphasis: true
+    checkBlockQuote: false

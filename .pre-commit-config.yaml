@@ -1,0 +1,36 @@
+---
+# yamllint disable rule:quoted-strings
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-json
+      - id: check-yaml
+      - id: check-merge-conflict
+      - id: fix-byte-order-marker
+      - id: mixed-line-ending
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+        args:
+          - --markdown-linebreak-ext=md
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.40.0
+    hooks:
+      - id: markdownlint-fix
+  - repo: https://github.com/wate/pre-commit-mirrors-textlint
+    rev: v14.0.4-1
+    hooks:
+      - id: textlint-fix
+        additional_dependencies:
+          - textlint-filter-rule-comments
+          - textlint-rule-preset-ja-technical-writing
+          - textlint-rule-preset-ja-spacing
+          - textlint-rule-prh
+      - id: textlint
+        additional_dependencies:
+          - textlint-filter-rule-comments
+          - textlint-rule-preset-ja-technical-writing
+          - textlint-rule-preset-ja-spacing
+          - textlint-rule-prh

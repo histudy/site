@@ -1,6 +1,9 @@
 {
   "name": "Markdown Editing",
   "dockerFile": "Dockerfile",
+  "remoteEnv": {
+    "TZ": "Asia/Tokyo"
+  },
   "customizations": {
     "vscode": {
       "settings": {
@@ -28,7 +31,7 @@
   "forwardPorts": [
     1313
   ],
-  "postStartCommand": "direnv allow",
+  "postStartCommand": "direnv allow && pre-commit install && hugo server",
   "shutdownAction": "stopContainer",
   "remoteUser": "vscode"
 }
